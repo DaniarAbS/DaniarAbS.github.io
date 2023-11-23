@@ -6,3 +6,29 @@ body {
     /* background-color: green; */
     background-image: url("./doodlejumpbg.png");
 }
+
+.left_and_right_buttons{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.left_and_right_buttons button{
+    margin-top: 1rem;
+    width: 10rem;
+    height: 3rem;
+}
+
+#leftButton{
+}
+
+#rightButton{
+}
+
+#spaceButton{
+    width: 10rem;
+    height: 3rem;
+    margin-top: 1rem;
+}

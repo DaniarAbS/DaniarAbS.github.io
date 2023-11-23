@@ -118,6 +118,37 @@ function update() {
     }
 }
 
+function moveLeft() {
+    velocityX = -4;
+    doodler.img = doodlerLeftImg;
+}
+
+function moveRight() {
+    velocityX = 4;
+    doodler.img = doodlerRightImg;
+}
+
+function jump() {
+    if (gameOver) {
+        // Reset
+        doodler = {
+            img: doodlerRightImg,
+            x: doodlerX,
+            y: doodlerY,
+            width: doodlerWidth,
+            height: doodlerHeight
+        };
+
+        velocityX = 0;
+        velocityY = initialVelocityY;
+        score = 0;
+        maxScore = 0;
+        gameOver = false;
+        placePlatforms();
+    }
+}
+
+
 function moveDoodler(e) {
     if (e.code == "ArrowRight" || e.code == "KeyD") { //move right
         velocityX = 4;
