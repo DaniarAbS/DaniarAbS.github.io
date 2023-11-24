@@ -52,6 +52,27 @@ window.onload = function() {
 
     requestAnimationFrame(update);
     document.addEventListener("keyup", movePlayer);
+
+    document.getElementById("player1Up").addEventListener("click", function() {
+        player1.velocityY = -3;
+    });
+
+    document.getElementById("player1Down").addEventListener("click", function() {
+        player1.velocityY = 3;
+    });
+
+    document.getElementById("player2Up").addEventListener("click", function() {
+        player2.velocityY = -3;
+    });
+
+    document.getElementById("player2Down").addEventListener("click", function() {
+        player2.velocityY = 3;
+    });
+
+    document.addEventListener("keyup", function() {
+        player1.velocityY = 0;
+        player2.velocityY = 0;
+    });
 }
 
 function update() {
@@ -166,5 +187,15 @@ function resetGame(direction) {
         height: ballHeight,
         velocityX : direction,
         velocityY : 2
+    }
+}
+
+function movePlayer1(e) {
+    //player1
+    if (e.code == "KeyW") {
+        player1.velocityY = -3;
+    }
+    else if (e.code == "KeyS") {
+        player1.velocityY = 3;
     }
 }
